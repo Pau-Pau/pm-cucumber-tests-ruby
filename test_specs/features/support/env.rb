@@ -31,9 +31,11 @@ end
 
 # LOCAL_ENVIRONMENT = 'http://processmaker.com:8080/'
 LOCAL_ENVIRONMENT = 'http://127.0.0.1:8080/sysworkflow/en/neoclassic/login/login'
+LOCAL_HOME = 'http://127.0.0.1:8080/sysworkflow/en/neoclassic/processes/main'
 
 $wait = Selenium::WebDriver::Wait.new(:timeout => 90)
 $url_login = LOCAL_ENVIRONMENT
+$url_home = LOCAL_HOME
 $admin_user = 'admin'
 $admin_psw = 'admin'
 $default_lang = 'English'

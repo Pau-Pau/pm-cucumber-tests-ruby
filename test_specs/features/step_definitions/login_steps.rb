@@ -15,7 +15,6 @@ When /^Login to ProcessMaker app with (.*), (.*) credentials and (.*) language$/
   page.driver.browser.manage.window.maximize
 
   @login.authenticate $admin_user,$admin_psw, $default_lang
-  sleep(2)
 end
 
 
@@ -50,11 +49,9 @@ Then /^The Homepage is displayed$/ do
   @home = Home.new
   @home.load
 
-=begin
-  @home.wait_for_main_menu(3)
-  @home.wait_until_main_menu_visible(3)
-  expected(@home._main_menu.has_designer?).to eq(true)
-=end
+  @home.wait_for_main_menu(10)
+  @home.wait_until_main_menu_visible(10)
+  expect(@home.has_main_menu?).to eq(true)
 end
 
 And /^Click on (.*) link$/ do
@@ -62,5 +59,9 @@ And /^Click on (.*) link$/ do
 end
 
 Then /^Open (.*) page$/ do |company_page|
+  @login = Login.new
+  @login.load
+
+  page.driver.browser.manage.window.maximize
   @login.colosa_page.click
 end
