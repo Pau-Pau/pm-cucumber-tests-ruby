@@ -21,6 +21,12 @@ And /^Create the (.*) clicking on the 'Create' button$/ do |object|
 end
 
 Then /^The (.*) just created should be displayed in the list$/ do |object|
+  @home.designer_iframe do |designer_frame|
+    designer_frame.process_submenu.wait_for_dynaforms(5)
+    designer_frame.process_submenu.wait_until_dynaforms_visible(5)
+    expect(designer_frame.process_submenu.has_dynaforms?).to eq(true)
+    sleep(2)
+  end
 =begin
   @home.designer_iframe do |designer_frame|
     designer_frame.wait_for_sequential(5)

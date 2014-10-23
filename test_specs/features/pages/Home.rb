@@ -22,6 +22,16 @@ class New_Process_dialog < SitePrism::Section
   element :cancel_process_creation, "button", text: "Cancel"
 end
 
+class Process_SubMenu_section < SitePrism::Section
+  element :dynaforms, "#DYNAFORMS a"
+  element :input_docs, "#INPUTDOCS a"
+  element :output_docs, "#OUTPUTDOCS a"
+  element :triggers, "#TRIGGERS a"
+  element :report_tables, "#REPORT_TABLES a"
+  element :db_connections, "#DB_CONNECTIONS a"
+  element :case_scheduler, "#CASE_SCHEDULER a"
+end
+
 class Designer_iframe < SitePrism::Page
 
   # Process manage elements located in the iframe header
@@ -37,6 +47,7 @@ class Designer_iframe < SitePrism::Page
   element :process_checkbox, "#ext-gen24"
 
   section :new_process_dialog, New_Process_dialog, "#newProjectWin"
+  section :process_submenu, Process_SubMenu_section, "#pm_submenu"
 
   # Task manager icons located in the right above
   element :sequential, "img", title: "Sequential"
