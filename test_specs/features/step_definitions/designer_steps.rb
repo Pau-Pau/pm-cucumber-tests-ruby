@@ -16,23 +16,24 @@ end
 And /^Create the (.*) clicking on the 'Create' button$/ do |object|
   @home.designer_iframe do |designer_frame|
     designer_frame.new_process_dialog.create_process.click
-    sleep(2)
+
+    designer_frame.process_submenu.wait_for_dynaforms(5)
+    designer_frame.process_submenu.wait_until_dynaforms_visible(5)
+    expect(designer_frame.process_submenu.has_dynaforms?).to eq(true)
   end
 end
 
 Then /^The (.*) just created should be displayed in the list$/ do |object|
+  @home.go_to_menu "DESIGNER"
   @home.designer_iframe do |designer_frame|
-    designer_frame.process_submenu.wait_for_dynaforms(5)
-    designer_frame.process_submenu.wait_until_dynaforms_visible(5)
-    expect(designer_frame.process_submenu.has_dynaforms?).to eq(true)
-    sleep(2)
+    designer_frame.wait_for_new_process_button(5)
+    designer_frame.wait_until_new_process_button_visible(5)
+    expect(designer_frame.has_new_process_button?).to eq(true)
+
+    @home.fill_field designer_frame.search_process_field, @_process_name
+    designer_frame.search_process_button.click
+    sleep(5)
+
+    designer_frame.first_checkbox_of_table.set(true)
   end
-=begin
-  @home.designer_iframe do |designer_frame|
-    designer_frame.wait_for_sequential(5)
-    designer_frame.wait_until_sequential_visible(5)
-    expect(designer_frame.has_sequentialn?).to eq(true)
-    sleep(2)
-  end
-=end
 end

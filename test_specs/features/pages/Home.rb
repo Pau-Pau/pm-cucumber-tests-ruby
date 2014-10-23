@@ -44,7 +44,7 @@ class Designer_iframe < SitePrism::Page
   element :process_category_filter, "#ext-gen56"
   element :search_process_field, "#searchTxt"
   element :search_process_button, "#ext-gen63"
-  element :process_checkbox, "#ext-gen24"
+  element :first_checkbox_of_table, "#ext-gen24"
 
   section :new_process_dialog, New_Process_dialog, "#newProjectWin"
   section :process_submenu, Process_SubMenu_section, "#pm_submenu"
@@ -58,6 +58,8 @@ class Designer_iframe < SitePrism::Page
   element :parallel_join, "img", title: "Parallel (join)"
   element :end_of_process, "img", title: "End of process"
   element :starting_task, "img", title: "Starting Task"
+
+  element :process_table, "#ext-gen20"
 end
 
 class Home < SitePrism::Page
@@ -72,6 +74,15 @@ class Home < SitePrism::Page
     @menu = find('a', :text => /^#{menu}$/, :match => :first)
     raise "FAILED: Menu (#{menu}) not visible." if !@menu.visible?
     @menu.click
+
+    if menu == "Process"
+      designer_iframe do |iframe|
+        iframe.wait_for_new_process_button(5)
+        iframe.wait_until_new_process_button_visible(5)
+        expect(iframe.has_new_process_button?).to eq(true)
+        expect(iframe.has_edit_process_button?).to eq(true)
+      end
+    end
   end
 
   def fill_field (field, value)
