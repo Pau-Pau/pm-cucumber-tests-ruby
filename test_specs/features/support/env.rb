@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'bundler/setup'
 require 'selenium-webdriver'
 require 'capybara'
 require 'capybara/node/matchers'
