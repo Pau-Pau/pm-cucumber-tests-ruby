@@ -32,6 +32,11 @@ class Process_SubMenu_section < SitePrism::Section
   element :case_scheduler, "#CASE_SCHEDULER a"
 end
 
+class DynaForm_dialog < SitePrism::Section
+  element :new_dynaForm_link, "a[id='form[MNU_ADD]']"
+  element :search_dynaForm_field, "input[id='form[PAGED_TABLE_FAST_SEARCH]']"
+end
+
 class Designer_iframe < SitePrism::Page
 
   # Process manage elements located in the iframe header
@@ -48,6 +53,7 @@ class Designer_iframe < SitePrism::Page
 
   section :new_process_dialog, New_Process_dialog, "#newProjectWin"
   section :process_submenu, Process_SubMenu_section, "#pm_submenu"
+  section :dynaForm_dialog, DynaForm_dialog, ".panel_frontend___processmaker"
 
   # Task manager icons located in the right above
   element :sequential, "img", title: "Sequential"
@@ -93,6 +99,13 @@ class Home < SitePrism::Page
     if element == "Process"
       designer_iframe do |designer_frame|
         designer_frame.new_process_button.click
+        # Close Dialog
+        #designer_frame.new_process_dialog.close_dialog_icon.click
+      end
+    end
+    if element == "DynaForms"
+      designer_iframe do |designer_frame|
+        designer_frame.process_submenu.dynaforms.click
         # Close Dialog
         #designer_frame.new_process_dialog.close_dialog_icon.click
       end

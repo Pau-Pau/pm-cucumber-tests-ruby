@@ -1,0 +1,361 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Create a Process",
+    "line": 1,
+    "description": "In order to test the Process creation\nAs an admin user",
+    "id": "create-a-process",
+    "uri": "features\\createProcess.feature",
+    "elements": [
+      {
+        "keyword": "Scenario Outline",
+        "name": "Verify that it is possible to create a Process",
+        "line": 5,
+        "description": "",
+        "id": "create-a-process;verify-that-it-is-possible-to-create-a-process",
+        "type": "scenario_outline",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "Login to ProcessMaker app with <user>, <psw> credentials and <lang> language",
+            "line": 6,
+            "match": {
+              "arguments": [
+                {
+                  "offset": 31,
+                  "val": "admin"
+                },
+                {
+                  "offset": 38,
+                  "val": "admin"
+                },
+                {
+                  "offset": 60,
+                  "val": "English"
+                }
+              ],
+              "location": "features/step_definitions/login_steps.rb:11"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "Go to DESIGNER menu",
+            "line": 7,
+            "match": {
+              "arguments": [
+                {
+                  "offset": 6,
+                  "val": "DESIGNER"
+                }
+              ],
+              "location": "features/step_definitions/home_steps.rb:1"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "Open a new Process pop-up",
+            "line": 8,
+            "match": {
+              "arguments": [
+                {
+                  "offset": 11,
+                  "val": "Process"
+                }
+              ],
+              "location": "features/step_definitions/designer_steps.rb:1"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Fill the required fields",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/designer_steps.rb:5"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "Create the Process clicking on the 'Create' button",
+            "line": 10,
+            "match": {
+              "arguments": [
+                {
+                  "offset": 11,
+                  "val": "Process"
+                }
+              ],
+              "location": "features/step_definitions/designer_steps.rb:16"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "The Process just created should be displayed in the list",
+            "line": 11,
+            "match": {
+              "arguments": [
+                {
+                  "offset": 4,
+                  "val": "Process"
+                }
+              ],
+              "location": "features/step_definitions/designer_steps.rb:23"
+            }
+          }
+        ],
+        "examples": [
+          {
+            "keyword": "Examples",
+            "name": "",
+            "line": 13,
+            "description": "",
+            "id": "create-a-process;verify-that-it-is-possible-to-create-a-process;",
+            "rows": [
+              {
+                "cells": [
+                  "user",
+                  "psw",
+                  "lang"
+                ],
+                "line": 14,
+                "id": "create-a-process;verify-that-it-is-possible-to-create-a-process;;1"
+              },
+              {
+                "cells": [
+                  "admin",
+                  "admin",
+                  "English"
+                ],
+                "line": 15,
+                "id": "create-a-process;verify-that-it-is-possible-to-create-a-process;;2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "Login to ProcessMaker app with valid Credentials",
+    "line": 1,
+    "description": "In order to test the login page\nAs an admin user\nI want to successful login.",
+    "id": "login-to-processmaker-app-with-valid-credentials",
+    "uri": "features\\login.feature",
+    "elements": [
+      {
+        "keyword": "Scenario Outline",
+        "name": "Verify that it is possible to login step by step",
+        "line": 6,
+        "description": "",
+        "id": "login-to-processmaker-app-with-valid-credentials;verify-that-it-is-possible-to-login-step-by-step",
+        "type": "scenario_outline",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "The login page of ProcessMaker app is Loaded",
+            "line": 7,
+            "match": {
+              "location": "features/step_definitions/login_steps.rb:21"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Fill the username field with <user>",
+            "line": 8,
+            "match": {
+              "arguments": [
+                {
+                  "offset": 29,
+                  "val": "admin"
+                }
+              ],
+              "location": "features/step_definitions/login_steps.rb:28"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "Fill the password field with <psw>",
+            "line": 9,
+            "match": {
+              "arguments": [
+                {
+                  "offset": 29,
+                  "val": "admin"
+                }
+              ],
+              "location": "features/step_definitions/login_steps.rb:32"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "Select the <lang> language to manage the app",
+            "line": 10,
+            "match": {
+              "arguments": [
+                {
+                  "offset": 11,
+                  "val": "English"
+                }
+              ],
+              "location": "features/step_definitions/login_steps.rb:36"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Click on Login button",
+            "line": 11,
+            "match": {
+              "arguments": [
+                {
+                  "offset": 9,
+                  "val": "Login"
+                }
+              ],
+              "location": "features/step_definitions/login_steps.rb:40"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "The Homepage is displayed",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/login_steps.rb:48"
+            }
+          }
+        ],
+        "examples": [
+          {
+            "keyword": "Examples",
+            "name": "",
+            "line": 13,
+            "description": "",
+            "id": "login-to-processmaker-app-with-valid-credentials;verify-that-it-is-possible-to-login-step-by-step;",
+            "rows": [
+              {
+                "cells": [
+                  "user",
+                  "psw",
+                  "lang"
+                ],
+                "line": 14,
+                "id": "login-to-processmaker-app-with-valid-credentials;verify-that-it-is-possible-to-login-step-by-step;;1"
+              },
+              {
+                "cells": [
+                  "admin",
+                  "admin",
+                  "English"
+                ],
+                "line": 15,
+                "id": "login-to-processmaker-app-with-valid-credentials;verify-that-it-is-possible-to-login-step-by-step;;2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario Outline",
+        "name": "Verify that it is possible to login with provided credentials",
+        "line": 17,
+        "description": "",
+        "id": "login-to-processmaker-app-with-valid-credentials;verify-that-it-is-possible-to-login-with-provided-credentials",
+        "type": "scenario_outline",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "Login to ProcessMaker app with <user>, <psw> credentials and <lang> language",
+            "line": 18,
+            "match": {
+              "arguments": [
+                {
+                  "offset": 31,
+                  "val": "admin"
+                },
+                {
+                  "offset": 38,
+                  "val": "admin"
+                },
+                {
+                  "offset": 60,
+                  "val": "English"
+                }
+              ],
+              "location": "features/step_definitions/login_steps.rb:11"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "The Homepage is displayed",
+            "line": 19,
+            "match": {
+              "location": "features/step_definitions/login_steps.rb:48"
+            }
+          }
+        ],
+        "examples": [
+          {
+            "keyword": "Examples",
+            "name": "",
+            "line": 21,
+            "description": "",
+            "id": "login-to-processmaker-app-with-valid-credentials;verify-that-it-is-possible-to-login-with-provided-credentials;",
+            "rows": [
+              {
+                "cells": [
+                  "user",
+                  "psw",
+                  "lang"
+                ],
+                "line": 22,
+                "id": "login-to-processmaker-app-with-valid-credentials;verify-that-it-is-possible-to-login-with-provided-credentials;;1"
+              },
+              {
+                "cells": [
+                  "admin",
+                  "admin",
+                  "English"
+                ],
+                "line": 23,
+                "id": "login-to-processmaker-app-with-valid-credentials;verify-that-it-is-possible-to-login-with-provided-credentials;;2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "name": "Verify that it is possible to login directly with Admin credentials",
+        "line": 25,
+        "description": "",
+        "id": "login-to-processmaker-app-with-valid-credentials;verify-that-it-is-possible-to-login-directly-with-admin-credentials",
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "When ",
+            "name": "Login to ProcessMaker app as Administrator",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/login_steps.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4348231000
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "The Homepage is displayed",
+            "line": 27,
+            "match": {
+              "location": "features/step_definitions/login_steps.rb:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1779096000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
