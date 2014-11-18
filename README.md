@@ -14,8 +14,8 @@ In order to execute cucumber test you need setup your environment follow the nex
  - Inside the command line execute "ruby dk.rb install".
  
 4. After, install the next gems from command line:
-     1.- gem install capybara
-     2.- gem install cucumber
-     3.- gem install selenium-webdriver
-     4.- gem install site_prism  (SitePrism gives you a simple, clean and semantic DSL for describing your site using the Page Object Model pattern, for use with Capybara)
-     5.- gem install rspec
+    - gem install capybara
+    - gem install cucumber
+    - gem install selenium-webdriver
+    - gem install site_prism  (SitePrism gives you a simple, clean and semantic DSL for describing your site using the Page Object Model pattern, for use with Capybara)
+    - gem install rspec
