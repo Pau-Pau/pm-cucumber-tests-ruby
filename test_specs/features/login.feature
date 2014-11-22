@@ -1,3 +1,4 @@
+@Login @HomePage
 Feature: Login to ProcessMaker app with valid Credentials
   In order to test the login page
   As an admin user
