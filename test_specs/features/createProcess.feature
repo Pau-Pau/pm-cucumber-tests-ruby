@@ -1,3 +1,4 @@
+@Designer
 Feature: Create a Process
   In order to test the Process creation
   As an admin user
