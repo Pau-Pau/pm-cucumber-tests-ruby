@@ -1,3 +1,4 @@
+@Designer @DynaForm
 Feature: Create a DynaForm
   In order to test the DynaForm creation
   As an admin user
