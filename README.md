@@ -8,9 +8,8 @@ In order to execute cucumber test you need setup your environment follow the nex
 2. Dowload devkit   from http://rubyinstaller.org/downloads/ (Use mozilla or chrome).
 
 3. Install devkit
-
- - Left double-click the self-extracting executable (SFX) downloaded from Step 2 and create a directory named 'Devkit' to install the DevKit artifacts into from command line:
- -
+Left double-click the self-extracting executable (SFX) downloaded from Step 2 and create a directory named 'Devkit' to install the DevKit artifacts into from command line:
+ 
     $ cd <DEVKIT_INSTALL_DIR> from command prompt.
 
     $ Inside the command line execute "ruby dk.rb init".
@@ -26,6 +25,7 @@ In order to execute cucumber test you need setup your environment follow the nex
     
     $ gem install selenium-webdriver
     $gem install site_prism  (SitePrism gives you a simple, clean and semantic DSL for describing your site using the Page Object Model pattern, for use with Capybara)
+    
     $ gem install rspec
 
 5. Then, when you have your features ready to test execute the next command from commad line:
