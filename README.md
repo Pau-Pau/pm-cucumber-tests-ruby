@@ -26,7 +26,7 @@ In order to execute cucumber test you need setup your environment follow the nex
     
     $ gem install selenium-webdriver
     $gem install site_prism  (SitePrism gives you a simple, clean and semantic DSL for describing your site using the Page Object Model pattern, for use with Capybara)
-    - gem install rspec
+    $ gem install rspec
 
 5. Then, when you have your features ready to test execute the next command from commad line:
     project/path/before/features/folder$ cucumber
