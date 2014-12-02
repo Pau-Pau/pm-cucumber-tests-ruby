@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ProcessMaker Cucumber BDD tests" default="cucumber">
+
+    <target name="cucumber" description="Behaviour Driven Development tests with Cucumber">
+        <exec executable="cucumber">
+            <arg value="--format" />
+            <arg value="json" />
+            <arg value="--out" />
+            <arg value="cucumber.json," />
+        </exec>
+    </target>
+
+</project>
