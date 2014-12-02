@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="ProcessMaker Cucumber BDD tests" default="cucumber">
+<project name="ProcessMaker Cucumber BDD tests" default="cucumber" basedir=".">
 
     <target name="cucumber" description="Behaviour Driven Development tests with Cucumber">
         <exec executable="cucumber">
